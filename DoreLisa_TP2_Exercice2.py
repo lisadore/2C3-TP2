@@ -1,7 +1,7 @@
 import csv
 
 
-def lecture_poke_stats(csv_file):
+def lecture_pokemon(csv_file):
     pokedex_dict = {}
     with open('pokemon.csv', 'r') as pokedex_file:
         pokedex_reader = csv.reader(pokedex_file, delimiter=',')
@@ -14,11 +14,11 @@ def lecture_poke_stats(csv_file):
     return pokedex_dict
 
 
-pokedex = lecture_poke_stats('pokemon.csv')
+pokedex = lecture_pokemon('pokemon.csv')
 for nom, stats in pokedex.items():
     print(f"{nom} : {stats}")
 
-pkmn = lecture_poke_stats("pokemon.csv")
+pkmn = lecture_pokemon("pokemon.csv")
 print(isinstance(pkmn, dict))
 print(isinstance(pkmn["Pikachu"], list))
 print(isinstance(pkmn["Pikachu"][0], int))
